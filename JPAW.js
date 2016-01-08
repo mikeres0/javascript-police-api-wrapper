@@ -1,6 +1,24 @@
+$(document).ready(function(){
+	$.ajaxSetup({
+        error: function (x, status, error) {
+            if (x.status != 200) {
+				console.log("Cannot connect to Police API. Response text: " + x['statusText'])           
+			} 
+        }
+    });
+})
+
+
 //Test script connection
 function testScript(){
-	alert('javascript-police-api-wrapper is linked')
+	console.log("Testing connection...");
+	$.ajax({
+		url: "https://data.police.uk/api/crimes-street-dates",
+		data: "json",
+		success: function(){
+			console.log('Connection successfully made to https://data.police.co.uk/api/')
+		}
+	})
 }
 
 
@@ -13,7 +31,8 @@ function availableData(){
 		url: "https://data.police.uk/api/crimes-street-dates",
 		dataType: "json",
 		success: function(data){
-			response = data;
+			console.log(data);			
+			//response = data;
 		}
 	})
 	return response;
@@ -29,7 +48,8 @@ function getForces(){
 		url: "https://data.police.uk/api/forces",
 		dataType: "json",
 		success: function(data){
-			response = data;
+			console.log(data)			
+			//response = data;
 		}
 	})
 	return response;
@@ -70,10 +90,15 @@ function locateNeighbourhood(lat, lon){
 	$.ajax({
 		url: "https://data.police.uk/api/locate-neighbourhood?q=" + lat + " ," + lon + "",
 		dataType: "json",
-		success: function(data){
-			response = data;
+		success: function(data){			
+			console.log(data)
+			//response = data;
 		}
 	})
 	return response;
 }
 
+
+function latlongConvert(){
+	//postcodes.io
+}
