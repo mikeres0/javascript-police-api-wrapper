@@ -6,6 +6,8 @@ $(document).ready(function(){
 			} 
         }
     });
+
+	testScript();
 })
 
 
@@ -82,9 +84,39 @@ function getForceSeniors(force){
 }
 
 
+//Crime data
+function streetLevelCrimes(){
+
+}
+
+function streetLevelOutcomes(){
+
+}
+
+function crimesAtLocation(){
+	
+}
+
+function crimesNoLocation(){
+	
+}
+
+function crimeCategories(){
+	
+}
+
+function lastUpdated(){
+	
+}
+
+function outcomeSpecific(){
+	
+}
 
 
-//Neighbourhood info
+
+
+//Neighbourhood data
 function locateNeighbourhood(lat, lon){
 	var response;
 	$.ajax({
