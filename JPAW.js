@@ -64,7 +64,7 @@ function getForceSeniors(force){
 
 
 
-//Locate neighbourhood via lat long
+//Neighbourhood info
 function locateNeighbourhood(lat, lon){
 	var response;
 	$.ajax({
